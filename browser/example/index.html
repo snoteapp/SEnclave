@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta name="robots" content="noindex">
+<meta name="referrer" content="origin">
+<meta charset="utf8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+<title>SEnclave</title>
+
+<script src="../dist/senclave.min.js"></script>
+</head>
+<body>
+
+<script>
+
+async function _test() {
+	await SEnclave.signup('user@domain.com', 'password');
+	let ekey=await SEnclave.generateEncryptedKey();
+	console.info(ekey);
+	let se=await SEnclave.create({ekey:ekey});
+
+	for(let i=0;i<4;i++) {
+		let edata=await se.encrypt("hello world "+i);
+		console.info(edata);
+		let data=await se.decrypt(edata);
+		console.info(data);
+
+	}
+
+}
+
+_test();
+	
+</script>
+
+</body>
+</html>

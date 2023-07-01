@@ -1,0 +1,23 @@
+{
+  "name": "senclave",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/senclave.min.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1"
+  },
+  "dependencies": {
+    "lz-string": "^1.5.0",
+    "opencrypto": "^1.5.5"
+  }
+}
